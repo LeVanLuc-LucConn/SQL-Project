@@ -152,7 +152,6 @@ GO
 CREATE TABLE [dbo].[Thuoc](
     [MaThuoc] [char](5) NOT NULL,
     [TenThuoc] [nvarchar](50) NOT NULL,
-    [SoLuong] [int] NULL
     [SoLuong] [int] NULL,
     [HanSuDung] [date] NULL,
     [CongDung] [nvarchar](200) NULL,
@@ -178,21 +177,7 @@ CREATE TABLE [dbo].[CT_DonThuoc](
     [MaThuoc] ASC
 )
 ) 
-GO
 
--- Bảng Thanh toán
-CREATE TABLE [dbo].[ThanhToan](
-    [MaThanhToan] [char](10) NOT NULL,
-    [MaHoaDon] [char](10) NOT NULL,
-    [NgayThanhToan] [date] NULL,
-    [SoTien] [decimal](12, 2) NULL,
-    [TinhTrang] [nvarchar](30) NULL,
-    [MaPhong] [char](5) NULL,
- CONSTRAINT [PK_ThanhToan] PRIMARY KEY CLUSTERED 
-(
-    [MaThanhToan] ASC
-)
-) 
 GO
 -- Tạo quan hệ giữa các bảng
 ALTER TABLE [dbo].[BenhNhan] WITH CHECK ADD CONSTRAINT [FK_BenhNhan_Phong] FOREIGN KEY([MaPhong])
